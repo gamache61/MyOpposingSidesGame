@@ -1,0 +1,205 @@
+{
+  "title": "Opposing Sides \u2014 First Contact",
+  "persistence": {
+    "key": "os_campaignProgress",
+    "notes": "localStorage.setItem('os_campaignProgress', missionId). On win, increment. On loss, replay same mission. Completing 8 sets os_campaignComplete=true"
+  },
+  "missions": [
+    {
+      "id": 1,
+      "title": "Boots on Ground",
+      "teaches": "Rank 4 infantry, attacker wins ties",
+      "brief": "Infantry vs Infantry \u2014 attacker wins same-type fights. Learn move + melee.",
+      "atk": [
+        "infantry",
+        "infantry",
+        "infantry"
+      ],
+      "def": [
+        "infantry",
+        "infantry",
+        "infantry"
+      ],
+      "terrainPool": [
+        "Plains"
+      ],
+      "rocks": "none"
+    },
+    {
+      "id": 2,
+      "title": "Fast Movers",
+      "teaches": "Scout Rank 5, moveBonus +2",
+      "brief": "Scouts trade rank for +2 move. Use them to flank and grab cover first.",
+      "atk": [
+        "infantry",
+        "infantry",
+        "scout"
+      ],
+      "def": [
+        "infantry",
+        "infantry",
+        "scout"
+      ],
+      "terrainPool": [
+        "Plains",
+        "Forest"
+      ],
+      "rocks": "light"
+    },
+    {
+      "id": 3,
+      "title": "Long Reach",
+      "teaches": "Artillery Rank 3, range 6, moveBonus -1",
+      "brief": "Artillery shoots 6 squares straight without moving. Slow (-1 move) \u2014 protect it.",
+      "atk": [
+        "infantry",
+        "scout",
+        "artillery"
+      ],
+      "def": [
+        "infantry",
+        "scout",
+        "artillery"
+      ],
+      "terrainPool": [
+        "Hills"
+      ],
+      "rocks": "medium"
+    },
+    {
+      "id": 4,
+      "title": "Corpsman!",
+      "teaches": "medicAdjacent + medicSaveRoll 0.4 \u2014 you already have this coded",
+      "brief": "Medic adjacent to a friendly that loses: 40% chance to survive. Keep Medics behind the line.",
+      "atk": [
+        "infantry",
+        "scout",
+        "artillery",
+        "medic"
+      ],
+      "def": [
+        "infantry",
+        "scout",
+        "artillery",
+        "medic"
+      ],
+      "terrainPool": [
+        "Forest"
+      ],
+      "rocks": "medium",
+      "spotlight": "support bonuses - medic"
+    },
+    {
+      "id": 5,
+      "title": "Chain of Command",
+      "teaches": "commanderAdjacent + effectiveRank() -1 buff",
+      "brief": "Commander is Rank 1 \u2014 wins vs all. Adjacent friendlies fight at -1 rank (better). Lose him, lose the buff.",
+      "atk": [
+        "infantry",
+        "scout",
+        "artillery",
+        "medic",
+        "commander"
+      ],
+      "def": [
+        "infantry",
+        "scout",
+        "artillery",
+        "medic",
+        "commander"
+      ],
+      "terrainPool": [
+        "Fortified"
+      ],
+      "rocks": "heavy",
+      "spotlight": "support bonuses - commander"
+    },
+    {
+      "id": 6,
+      "title": "Combined Arms",
+      "teaches": "Combined support bonuses",
+      "brief": "Full roster. Commander behind Infantry, Medic covering front. Use both support bonuses together.",
+      "atk": [
+        "infantry",
+        "infantry",
+        "scout",
+        "artillery",
+        "medic",
+        "commander"
+      ],
+      "def": [
+        "infantry",
+        "infantry",
+        "scout",
+        "artillery",
+        "medic",
+        "commander"
+      ],
+      "terrainPool": [
+        "Plains",
+        "Forest",
+        "Hills",
+        "Fortified"
+      ],
+      "rocks": "custom_map_1"
+    },
+    {
+      "id": 7,
+      "title": "Alien Asymmetry",
+      "teaches": "Owner-agnostic helmets, colored guide",
+      "brief": "Same stats, different skins. Humans vs Aliens \u2014 proves visual asymmetry is balanced.",
+      "atk": [
+        "infantry",
+        "infantry",
+        "scout",
+        "artillery",
+        "medic",
+        "commander"
+      ],
+      "def": [
+        "infantry",
+        "infantry",
+        "scout",
+        "artillery",
+        "medic",
+        "commander"
+      ],
+      "terrainPool": [
+        "Alien"
+      ],
+      "rocks": "custom_map_2",
+      "visual": "alien/human asymmetry"
+    },
+    {
+      "id": 8,
+      "title": "Final Standoff",
+      "teaches": "Campaign complete",
+      "brief": "Boss: Outnumbered 6 vs 9 but you have Fortified + rock cover. Win unlocks veteran helmet badge.",
+      "atk": [
+        "infantry",
+        "infantry",
+        "scout",
+        "artillery",
+        "medic",
+        "commander"
+      ],
+      "def": [
+        "infantry",
+        "infantry",
+        "infantry",
+        "scout",
+        "scout",
+        "artillery",
+        "artillery",
+        "medic",
+        "commander"
+      ],
+      "terrainPool": [
+        "Fortified"
+      ],
+      "rocks": "final_stand_heavy",
+      "isBoss": true,
+      "reward": "unlock helmet badge color \u2014 ties into Phase 3 Progression next"
+    }
+  ]
+}
